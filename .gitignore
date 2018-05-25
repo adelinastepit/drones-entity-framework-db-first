@@ -1,0 +1,17 @@
+
+*.exe
+*.xml
+*.cs
+.vs/TestDbFirst/v15/.suo
+.vs/TestDbFirst/v15/Server/sqlite3/storage.ide
+.vs/TestDbFirst/v15/Server/sqlite3/db.lock
+CodeFirstNewDatabaseSample/bin/Debug/CodeFirstNewDatabaseSample.pdb
+*.dll
+*.resx
+*.resources
+*.config
+*.CopyComplete
+*.cache
+CodeFirstNewDatabaseSample/obj/Debug/CodeFirstNewDatabaseSample.csproj.FileListAbsolute.txt
+*.csproj
+*.pdb

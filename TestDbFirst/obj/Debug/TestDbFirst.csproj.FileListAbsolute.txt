@@ -1,0 +1,11 @@
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\bin\Debug\TestDbFirst.exe.config
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\bin\Debug\TestDbFirst.exe
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\bin\Debug\TestDbFirst.pdb
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\bin\Debug\EntityFramework.dll
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\bin\Debug\EntityFramework.xml
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\obj\Debug\TestDbFirst.csprojResolveAssemblyReference.cache
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\obj\Debug\TestDbFirst.csproj.CoreCompileInputs.cache
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\obj\Debug\TestDbFirst.exe
+C:\Users\Trainer\Documents\GitHub\drones-entity-framework-db-first\TestDbFirst\obj\Debug\TestDbFirst.pdb

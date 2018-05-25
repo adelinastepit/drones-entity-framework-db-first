@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeliveryArea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Drone" Relationship="Self.FK__Drone__IdDeliver__2E1BDC42" FromRole="DeliveryArea" ToRole="Drone" />
+  </EntityType>
+  <EntityType Name="Drone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdLoadArea" Type="Int32" Nullable="false" />
+    <Property Name="IdDeliveryArea" Type="Int32" Nullable="false" />
+    <Property Name="IdPackage" Type="Int32" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="MaxWeight" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DeliveryArea" Relationship="Self.FK__Drone__IdDeliver__2E1BDC42" FromRole="Drone" ToRole="DeliveryArea" />
+    <NavigationProperty Name="LoadArea" Relationship="Self.FK__Drone__IdLoadAre__2D27B809" FromRole="Drone" ToRole="LoadArea" />
+    <NavigationProperty Name="Package" Relationship="Self.FK__Drone__IdPackage__2F10007B" FromRole="Drone" ToRole="Package" />
+  </EntityType>
+  <EntityType Name="LoadArea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Drone" Relationship="Self.FK__Drone__IdLoadAre__2D27B809" FromRole="LoadArea" ToRole="Drone" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Drone" Relationship="Self.FK__Drone__IdPackage__2F10007B" FromRole="Package" ToRole="Drone" />
+  </EntityType>
+  <Association Name="FK__Drone__IdDeliver__2E1BDC42">
+    <End Role="DeliveryArea" Type="Self.DeliveryArea" Multiplicity="1" />
+    <End Role="Drone" Type="Self.Drone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeliveryArea">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Drone">
+        <PropertyRef Name="IdDeliveryArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Drone__IdLoadAre__2D27B809">
+    <End Role="LoadArea" Type="Self.LoadArea" Multiplicity="1" />
+    <End Role="Drone" Type="Self.Drone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadArea">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Drone">
+        <PropertyRef Name="IdLoadArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Drone__IdPackage__2F10007B">
+    <End Role="Package" Type="Self.Package" Multiplicity="0..1" />
+    <End Role="Drone" Type="Self.Drone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Drone">
+        <PropertyRef Name="IdPackage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Author" EntityType="Self.Author" />
+    <EntitySet Name="DeliveryArea" EntityType="Self.DeliveryArea" />
+    <EntitySet Name="Drone" EntityType="Self.Drone" />
+    <EntitySet Name="LoadArea" EntityType="Self.LoadArea" />
+    <EntitySet Name="Package" EntityType="Self.Package" />
+    <AssociationSet Name="FK__Drone__IdDeliver__2E1BDC42" Association="Self.FK__Drone__IdDeliver__2E1BDC42">
+      <End Role="DeliveryArea" EntitySet="DeliveryArea" />
+      <End Role="Drone" EntitySet="Drone" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Drone__IdLoadAre__2D27B809" Association="Self.FK__Drone__IdLoadAre__2D27B809">
+      <End Role="LoadArea" EntitySet="LoadArea" />
+      <End Role="Drone" EntitySet="Drone" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Drone__IdPackage__2F10007B" Association="Self.FK__Drone__IdPackage__2F10007B">
+      <End Role="Package" EntitySet="Package" />
+      <End Role="Drone" EntitySet="Drone" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
